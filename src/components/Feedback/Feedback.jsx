@@ -64,14 +64,12 @@ const Feedback = () => {
   }, []);
 
   const getAllFeedback = () => {
-    // https://localhost:5000/createFeedback
     fetch("https://feedback-app-backend-ucva.onrender.com/getAllFeedback")
       .then((response) => {
         return response.json();
       })
       .then((users) => {
         setUsers(users.feedback);
-        console.log(users);
       })
       .catch((err) => {
         console.log(err);
@@ -79,7 +77,6 @@ const Feedback = () => {
   };
 
   const registerHandler = () => {
-    console.log("FormState: ", formState);
     fetch("https://feedback-app-backend-ucva.onrender.com/createFeedback", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -97,7 +94,6 @@ const Feedback = () => {
           feedback: "",
         });
         getAllFeedback();
-        console.log(data);
       })
       .catch((error) => console.error(error));
   };
@@ -105,16 +101,13 @@ const Feedback = () => {
   const submitHandler = (event) => {
     event.preventDefault();
     if (id) {
-      console.log("update part");
       updateHandler();
     } else {
-      console.log("register part");
       registerHandler();
     }
   };
 
   const deleteHandler = (_id) => {
-    console.log("Fetched ID: ", _id);
     const id = { id: _id };
     fetch("https://feedback-app-backend-ucva.onrender.com/deleteFeedback", {
       method: "POST",
@@ -149,7 +142,6 @@ const Feedback = () => {
         return response.json();
       })
       .then((users) => {
-        console.log("Users: ", users.data.firstName);
         setFormState({
           firstName: users.data.firstName,
           lastName: users.data.lastName,
@@ -197,14 +189,14 @@ const Feedback = () => {
           sx={{
             boxShadow: 3,
             width: {
-              xs: 350, //0
-              sm: 400, //600
-              md: 500, //900
-              lg: 600, //1200
-              xl: 700  //1536
+              xs: 350, 
+              sm: 400, 
+              md: 500, 
+              lg: 600, 
+              xl: 700  
             },
             height: "fit-content",
-            bgcolor: "#F8F9F9", //F8F9F9
+            bgcolor: "#F8F9F9",
             px: 2,
             py: 1,
             mx: "auto",
