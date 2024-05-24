@@ -1,30 +1,3 @@
-.main-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: lightgray;
-}
-
-.form {
-    width: 30%;
-    /* border: 2px solid red; */
-}
-
-.input-fields1 {
-    display: flex;
-    gap: 1rem;
-    margin: 1rem 1rem;
-}
-
-.email-div {
-    margin: 1rem 1rem;
-}
-
-.textarea-div {
-    margin: 1rem 1rem;
-}
-
-.btn {
-    margin: 1rem 1rem;
+Box {
+    
 }

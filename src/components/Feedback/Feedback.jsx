@@ -1,17 +1,10 @@
 import React from "react";
-import "./Feedback.css";
+import { useState, useEffect } from "react";
+
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
-import { useState, useEffect } from "react";
-
 import CustomTable from "../CustomTable/CustomTable";
-// import TableBody from "@mui/material/TableBody";
-// import TableCell from "@mui/material/TableCell";
-// import TableContainer from "@mui/material/TableContainer";
-// import TableHead from "@mui/material/TableHead";
-// import TableRow from "@mui/material/TableRow";
-// import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { Divider } from "@mui/material";
@@ -168,7 +161,7 @@ const Feedback = () => {
 
   return (
     <>
- <Box
+ <Box 
         sx={{
           boxShadow: 3,
           width: "30rem",
@@ -176,7 +169,7 @@ const Feedback = () => {
           bgcolor: "#F8F9F9",
           px: 2,
           py: 1,
-          mx: 70,
+          mx: 'auto',
           my: 5,
           borderRadius: 2,
           textAlign: "center",

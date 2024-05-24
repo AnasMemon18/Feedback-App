@@ -13,7 +13,7 @@ const CustomTable = ( props ) => {
   return (
     <>
       <TableContainer className="table-container" component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <Table sx={{ minWidth: 650, mx:"auto" }} aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell align="center">Firstname</TableCell>
