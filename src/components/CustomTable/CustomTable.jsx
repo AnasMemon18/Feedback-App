@@ -16,11 +16,11 @@ const CustomTable = ( props ) => {
         <Table sx={{ minWidth: 650, mx:"auto" }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell align="center">Firstname</TableCell>
-              <TableCell align="center">Lastname</TableCell>
-              <TableCell align="center">Email</TableCell>
-              <TableCell align="center">Feedback</TableCell>
-              <TableCell align="left">Actions</TableCell>
+              <TableCell align="center"><b>First Name</b></TableCell>
+              <TableCell align="center"><b>Last Name</b></TableCell>
+              <TableCell align="center"><b>Email</b></TableCell>
+              <TableCell align="center"><b>Feedback</b></TableCell>
+              <TableCell align="left"><b>Actions</b></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
