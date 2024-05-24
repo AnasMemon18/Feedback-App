@@ -30,6 +30,14 @@ const Feedback = () => {
     position:"top-right",
     duration: 4000
   }); 
+  const deleteToast = () => toast.success("Feedback deleted successfully!!!", {
+    position:"top-right",
+    duration: 4000
+  }); 
+  const updateToast = () => toast.success("Feedback updated successfully!!!", {
+    position:"top-right",
+    duration: 4000
+  }); 
 
   const changeHandler = (event) => {
     const { name, value } = event.target;
@@ -56,6 +64,7 @@ const Feedback = () => {
   }, []);
 
   const getAllFeedback = () => {
+    // https://localhost:5000/createFeedback
     fetch("https://feedback-app-backend-ucva.onrender.com/getAllFeedback")
       .then((response) => {
         return response.json();
@@ -117,6 +126,7 @@ const Feedback = () => {
       })
       .then((data) => {
         if (data.status == 200) {
+          deleteToast();
           getAllFeedback();
           setId("");
           setFormState({
@@ -166,7 +176,7 @@ const Feedback = () => {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
+        updateToast();
         getAllFeedback();
         setFormState({
           firstName: "",
@@ -186,9 +196,15 @@ const Feedback = () => {
         <Box
           sx={{
             boxShadow: 3,
-            width: "30rem",
+            width: {
+              xs: 350, //0
+              sm: 400, //600
+              md: 500, //900
+              lg: 600, //1200
+              xl: 700  //1536
+            },
             height: "fit-content",
-            bgcolor: "#F8F9F9",
+            bgcolor: "#F8F9F9", //F8F9F9
             px: 2,
             py: 1,
             mx: "auto",
@@ -197,7 +213,7 @@ const Feedback = () => {
             textAlign: "center",
           }}
         >
-          <Typography variant="h4">Feedback Form</Typography>
+          <Typography variant="h3">Feedback Form</Typography>
           <Divider
             sx={{
               mt: 1,
